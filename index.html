@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+ <!-- TODO LIST CONTAINER AND HEADER -->
+        <div id="todo-container">
+        <div id="header">
+            <h1>TO DO LIST</h1>
+        </div>
+ <!-- INPUT BOX -->
+        <div id="todo-form">
+            <input
+            type="text"
+            class="input-item"
+            name="input-box"
+            id="input-box"
+            placeholder="Add task here..."
+        />
+ <!-- ADD BUTTON -->
+         <button id="input-button" onclick="addTask()">Add</button>
+      </div>
+ <!-- TASK LIST -->
+         <h2>Task List</h2>
+      <ul id="list-container"></ul>
+      
+<!-- COUNTER -->
+     <hr />
+        <div class="counter-container">
+        <div id="task-counters">
+           Completed: <span id="completed-counter">0</span> | Uncompleted:
+           <span id="uncompleted-counter">0</span>
+  </div>
+     </div>
+       <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>
