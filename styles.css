@@ -29,6 +29,7 @@ body {
   padding: 20px;
   color: rgb(18, 1, 31);
   border-radius: 15px;
+  box-sizing: border-box;
 }
 
 #header {
@@ -37,37 +38,42 @@ body {
   text-align: center;
 }
 
+#todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 #input-box {
-  flex: 1 1 200px;
-  width: 200px;
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 100%;
   padding: 10px;
   border: 1px solid #7308a1;
   border-radius: 5px;
   margin-right: 5px;
   margin-bottom: 10px;
   font-size: 20px;
+  box-sizing: border-box;
 }
 
 #input-button {
-  flex: 0 0 auto;
+  flex-shrink: 0;
+  padding: 10px 15px;
   font-size: 20px;
-  cursor: pointer;
-  transition: 0.4s;
-  padding: 10px;
   border: none;
   border-radius: 5px;
   background-color: #a235e6;
+  cursor: pointer;
+  transition: 0.4s;
+  margin-left: 5px;
+  box-sizing: border-box;
 }
 
 #input-button:hover {
   background-color: #8a23eb; 
-}
-
-#todo-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 20px;
 }
 
 ul {
@@ -78,19 +84,20 @@ ul {
 }
 
 li {
-  border: 1px solid rgb(47, 2, 98);
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid rgb(47, 2, 98);
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  box-sizing: border-box;
+  word-break: break-word;
 }
 
 li span, li .timestamp {
-  flex: 1 1 auto;
+  flex: 1 1 100%;
   word-break: break-word;
 }
 
@@ -108,7 +115,7 @@ li span, li .timestamp {
   color: darkred;
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 480px) {
   #input-box {
     width: 100%;
     margin-right: 0;
@@ -122,5 +129,12 @@ li span, li .timestamp {
 
   li {
     font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li .edit-btn, li .delete-btn {
+    margin-left: 0;
+    margin-top: 5px;
   }
 }
