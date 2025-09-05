@@ -22,7 +22,8 @@ body {
 
 #todo-container {
   background: rgb(153, 121, 211);
-  width: 400px;
+  max-width: 400px;
+  width: 90%;
   margin: 0 auto;
   border: 2px solid #370182;
   padding: 20px;
@@ -30,24 +31,25 @@ body {
   border-radius: 15px;
 }
 
-
 #header {
   margin: 5px;
   font-size: 20px;
   text-align: center;
 }
 
-
 #input-box {
+  flex: 1 1 200px;
   width: 200px;
   padding: 10px;
   border: 1px solid #7308a1;
   border-radius: 5px;
   margin-right: 5px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 
 #input-button {
+  flex: 0 0 auto;
   font-size: 20px;
   cursor: pointer;
   transition: 0.4s;
@@ -61,31 +63,64 @@ body {
   background-color: #8a23eb; 
 }
 
+#todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin-top: 20px;
-  text-align:left;
-
+  text-align: left;
 }
 
 li {
-border: 1px solid rgb(47, 2, 98);
-border-radius: 5px;
-margin-bottom: 10px;
-padding: 10px;
-margin-top: 10px;
+  border: 1px solid rgb(47, 2, 98);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li span, li .timestamp {
+  flex: 1 1 auto;
+  word-break: break-word;
 }
 
 .edit-btn, .delete-btn {
   float: right;
-  color:rgb(30, 1, 79);
+  color: rgb(30, 1, 79);
   cursor: pointer;
   margin: 3px 5px;
   border: none;
   padding: 3px 5px;
   background: none;
 } 
+
 .edit-btn:hover, .delete-btn:hover {
-  color:    darkred;
+  color: darkred;
+}
+
+@media screen and (max-width: 360px) {
+  #input-box {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #input-button {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  li {
+    font-size: 14px;
+  }
 }
